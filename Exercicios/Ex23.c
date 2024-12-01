@@ -1,14 +1,15 @@
-// Diagonal principal: 
+//  Maior elemento de cada linha:
+// Não está finalizado
 
 #include <stdio.h>
 
 int main() {
-    int i, j, mat[3][3];
+    int i, j, mat[3][3], maior_linha;
 
     for (i = 0; i < 3; i++) {
         for (j = 0; j < 3; j++) {
             printf("Elemento [%d, %d]: ", i, j);
-            scanf("%d", &mat[i][j]);
+            scanf("%d", &mat[i][j]); 
         }
     }
 
@@ -17,13 +18,6 @@ int main() {
             printf("%d ", mat[i][j]);
         }
         printf("\n");
-    }
-
-    printf("DIAGONAIS PRINCIPAIS\n");
-    for (i = 0; i < 3; i++) {
-        for (j = i; j == i; j++) {
-            printf("%d ", mat[i][j]);
-        }
     }
 
     return 0;
