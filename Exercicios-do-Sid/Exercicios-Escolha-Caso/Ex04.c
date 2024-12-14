@@ -24,7 +24,10 @@ int main() {
     const int mes_inicio_outono = mes >= 3;
     const int mes_fim_outono = mes <= 6;
     const int dia_fim_outono = dia > 0 && dia < 21;
-    const int todos_dias_mes = dia > 0 && dia <= 31;
+
+    // Constantes para validação de dia, mes e ano
+    const int todos_dias = dia > 0 && dia <= 31;
+    const int todos_meses = dia >= 1 && dia <= 12;
     
     // Utilizado em partes específicas
     const int dia_para_ano_bissexto = dia > 0 && dia < 30;
