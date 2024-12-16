@@ -23,12 +23,9 @@ void tracos_inferiores() {
 int main() {
     setlocale(LC_ALL, "Portuguese_Brazil");
     char nome_cliente[20];
-    int i, numero_conta, operacao, contador, aux;
-    double saldo_bancario;
+    int i, numero_conta, operacao;
+    double saldo_bancario, deposito, retirada;
     char espacos = {' '};
-
-    contador = 1;
-    int armazem_numero_conta[contador];
 
     do {
         tracos_superior();
@@ -37,9 +34,9 @@ int main() {
 
         printf("Qual o nome cliente: ");
         fgets(nome_cliente, 20, stdin);
-        printf("Qual o número da conta: ");
+        printf("Qual o numero da conta: ");
         scanf("%d", &numero_conta);
-        printf("Qual o saldo bancário: ");
+        printf("Qual o saldo bancario: ");
         scanf("%lf", &saldo_bancario);
 
         tracos_superior();
@@ -52,12 +49,30 @@ int main() {
         printf("%-15c FUNCIONALIDADES", espacos);
         tracos_inferiores();
         printf("[ 1 ] -> DEPOSITO\n[ 2 ] -> RETIRADA\n[ 3 ] -> SAIR\n");
-        printf("Qual operação será efetuada: ");
+        printf("Qual operacao sera efetuada: ");
         scanf("%d", &operacao);
+        if (operacao == 1) {
+            printf("Qual o valor do deposito: ");
+            scanf("%lf", &deposito);
+
+            saldo_bancario = saldo_bancario + deposito;
+            printf("Saldo apos o deposito -> %.2lf\n", saldo_bancario);
+        }
+        else if (operacao == 2) {
+            printf("Qual o valor da retirada: ");
+            scanf("%lf", &retirada);
+
+            if (retirada > saldo_bancario) {
+                printf("VOCE NAO TEM SALDO O SUFICIENTE PARA ESSA RETIRADA.\n");
+            }
+            else {
+                saldo_bancario = saldo_bancario - retirada;
+                printf("SALDO ATUAL -> %.2lf\n", saldo_bancario);
+            }
+        }
         fflush(stdin);
-        contador = contador + 1;
-        printf("CONTADOR = %d\n\n", contador);
     } while (operacao >= 1 && operacao < 3);
+    printf("OPERACAO FINALIZADA\n");
 
     return 0;
 }
