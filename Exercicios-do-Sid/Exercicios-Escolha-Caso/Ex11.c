@@ -23,11 +23,12 @@ void tracos_inferiores() {
 int main() {
     setlocale(LC_ALL, "Portuguese_Brazil");
     char nome_cliente[20];
-    int i, numero_conta, operacao, contador;
+    int i, numero_conta, operacao, contador, aux;
     double saldo_bancario;
     char espacos = {' '};
 
     contador = 1;
+    int armazem_numero_conta[contador];
 
     do {
         tracos_superior();
