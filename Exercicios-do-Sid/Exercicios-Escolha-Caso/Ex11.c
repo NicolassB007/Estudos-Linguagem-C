@@ -61,7 +61,6 @@ int main() {
         else if (operacao == 2) {
             printf("Qual o valor da retirada: ");
             scanf("%lf", &retirada);
-
             if (retirada > saldo_bancario) {
                 printf("VOCE NAO TEM SALDO O SUFICIENTE PARA ESSA RETIRADA.\n");
             }
