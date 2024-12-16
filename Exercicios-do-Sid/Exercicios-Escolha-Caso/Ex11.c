@@ -23,9 +23,10 @@ void tracos_inferiores() {
 int main() {
     setlocale(LC_ALL, "Portuguese_Brazil");
     char nome_cliente[20];
-    int i, numero_conta, operacao;
+    int i, numero_conta, operacao, contador,  armazem_numero_bancario;
     double saldo_bancario, deposito, retirada;
     char espacos = {' '};
+    int;
 
     do {
         tracos_superior();
@@ -54,7 +55,6 @@ int main() {
         if (operacao == 1) {
             printf("Qual o valor do deposito: ");
             scanf("%lf", &deposito);
-
             saldo_bancario = saldo_bancario + deposito;
             printf("Saldo apos o deposito -> %.2lf\n", saldo_bancario);
         }
