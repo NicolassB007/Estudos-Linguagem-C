@@ -27,7 +27,7 @@ int main() {
     char espacos = {' '};
     do {
         traco_superior();
-        printf("%-5c OPÇÕES", espacos);
+        printf("%-5c OPCOES", espacos);
         traco_inferior();
 
         printf("[ 1 ] -> SOMA\n[ 2 ] -> MULTIPLICAR\n[ 3 ] -> SUBTRAIR\n[ 4 ] -> DIVIR\n[ 5 ] -> VALOR AO QUADRADO\n[ 6 ] -> RAIZ QUADRADA\n[ 7 ] -> SAIR\n");
@@ -39,7 +39,7 @@ int main() {
             traco_superior();
             printf("%-6c SOMA", espacos);
             traco_inferior();
-            printf("Quantos valores serão: ");
+            printf("Quantos valores serï¿½o: ");
             scanf("%d", &qtd_valores);
             soma = 0;
             for (i = 0; i < qtd_valores; i++) {
@@ -52,9 +52,9 @@ int main() {
         else if (esc == 2) {
             double resultado;
             traco_superior();
-            printf("%-2c MULTIPLICAÇÃO", espacos);
+            printf("%-2c MULTIPLICACAO", espacos);
             traco_inferior();
-            printf("Quantos valores serão: ");
+            printf("Quantos valores serao: ");
             scanf("%d", &qtd_valores);
             resultado = 1;
             for (i = 0; i < qtd_valores; i++) {
@@ -64,8 +64,20 @@ int main() {
             }
             printf("RESULTADO FINAL = %.2lf\n", resultado);
         }
+        else if (esc == 3) {
+            double subtracao;
+            traco_superior();
+            printf("%-2c SUBTRACAO", espacos);
+            traco_inferior();
+            printf("Quantos valores serao: ");
+            scanf("%d", &qtd_valores);
+            for (i = 0; i < qtd_valores; i++) {
+                printf("%d valor: ", i + 1);
+                scanf("%lf", &valores);
+            }
+        }
     } while (esc >= 1 && esc < 7);
-    printf("VOCE ESCOLHEU A OPÇÃO 'SAIR'");
+    printf("VOCE ESCOLHEU A OPCAO 'SAIR'");
 
     return 0;
 }
