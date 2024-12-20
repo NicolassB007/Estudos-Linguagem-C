@@ -1,51 +1,70 @@
 #include <stdio.h>
-#include <string.h>
+
+void traco_superior() {
+    int i;
+    for (i = 0; i < 15; i++) {
+        printf("--");
+    }
+    printf("\n");
+}
+
+void traco_inferior() {
+    int i;
+    printf("\n");
+    for (i = 0; i < 15; i++) {
+        printf("--");
+    }
+    printf("\n");
+}
 
 int main() {
-    int mes;
+    int codigo;
+    char espaco = {' '};
 
-    printf("Informe o mes (numero) que voce quer saber: ");
-    scanf("%d", &mes);
+    printf("[ 101 ] -> INFANTIL\n[ 102 ] -> JUVENIL\n[ 103 ] -> ADOLESCENTE\n[ 104 ] -> SENIOR\n[ 105 ] -> PROFISSIONAL\n[ 106 ] -> MASTER\n");
+    printf("Informe o codigo da categoria: ");
+    scanf("%d", &codigo);
 
-    switch (mes) {
-        case 1:
-            printf("JANEIRO");
+    switch (codigo) {
+        case 101:
+            traco_superior();
+            printf("%-8c INFANTIL", espaco);
+            traco_inferior();
+            printf("IDADES -> DE 6 ATE 8 ANOS DE IDADE\n");
             break;
-        case 2:
-            printf("FEVEREIRO");
+        case 102:
+            traco_superior();
+            printf("%-8c JUVENIL", espaco);
+            traco_inferior();
+            printf("IDADES -> DE 8 ATE 10 ANOS DE IDADE\n");
             break;
-        case 3:
-            printf("MARCO");
+        case 103:
+            traco_superior();
+            printf("%-8c ADOLESCENTE", espaco);
+            traco_inferior();
+            printf("IDADES -> DE 11 ATE 13 ANOS DE IDADE\n");
             break;
-        case 4:
-            printf("ABRIL");
+        case 104:
+            traco_superior();
+            printf("%-8c SENIOR", espaco);
+            traco_inferior();
+            printf("IDADES -> DE 14 ATE 17 ANOS DE IDADE\n");
             break;
-        case 5:
-            printf("MAIO");
+        case 105:
+            traco_superior();
+            printf("%-8c PROFISSIONAL", espaco);
+            traco_inferior();
+            printf("IDADES -> DE 18 ATE 25 ANOS DE IDADE\n");
             break;
-        case 6:
-            printf("JUNHO");
-            break;
-        case 7:
-            printf("JULHO");
-            break;
-        case 8:
-            printf("AGOSTO");
-            break;
-        case 9:
-            printf("SETEMBRO");
-            break;
-        case 10:
-            printf("OUTUBRO");
-            break;
-        case 11:
-            printf("NOVEMBRO");
-            break;
-        case 12:
-            printf("DEZEMBRO");
+        case 106: 
+            traco_superior();
+            printf("%-8c MASTER", espaco);
+            traco_inferior();
+            printf("IDADES -> DE 25 ATE 40 ANOS DE IDADE\n");
             break;
         default:
-            printf("MES INVALIDO");
+            printf("APOSENTADO");
     }
+
     return 0;
 }
