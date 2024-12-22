@@ -30,8 +30,8 @@ int main() {
         for (int j = 0; j < (total_valores - 1); j++) {
             if (conjuntos[j] > conjuntos[j + 1]) {
                 aux = conjuntos[j];
-                conjuntos[i] = conjuntos[j + 1];
-                conjuntos[i + 1] = aux;
+                conjuntos[j] = conjuntos[j + 1];
+                conjuntos[j + 1] = aux;
             }
         }
     }
