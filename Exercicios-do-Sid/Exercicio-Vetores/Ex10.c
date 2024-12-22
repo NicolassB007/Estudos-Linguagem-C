@@ -35,6 +35,12 @@ int main() {
 
     printf("\n");
     printf("VALORES EM COMUM EM AMBOS OS CONJUNTOS\n");
-
+    for (i = 0; i < qtd_valores; i++) {
+        for (int j = 0; j < qtd_valores; j++) {
+            if (conjunto[i] == conjunto_2[j]) {
+                printf("%d ", conjunto[i]);
+            }
+        }
+    }
     return 0;
 }
